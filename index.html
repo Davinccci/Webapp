@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>城市匹配器</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&family=Source+Han+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orbits" aria-hidden="true"></div>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="kicker">CITY MATCH STUDIO</p>
+      <h1>找到最适合你的城市</h1>
+      <p class="subtitle">通过一组选择题，快速匹配与你生活方式最合拍的城市。</p>
+      <div class="hero__badges">
+        <span>6 个问题</span>
+        <span>12 座候选城市</span>
+        <span>3 秒出结果</span>
+      </div>
+    </div>
+    <div class="hero__card">
+      <div class="progress">
+        <div class="progress__bar" id="progressBar"></div>
+      </div>
+      <div class="step-indicator" id="stepIndicator">问题 1 / 6</div>
+      <div class="question" id="question"></div>
+      <div class="options" id="options"></div>
+      <div class="actions">
+        <button class="btn ghost" id="prevBtn" disabled>上一步</button>
+        <button class="btn" id="nextBtn">下一步</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="results" id="results" aria-live="polite">
+    <h2>你的城市匹配结果</h2>
+    <p class="results__hint">根据你的选择匹配度排序。</p>
+    <div class="result-grid" id="resultGrid"></div>
+    <button class="btn outline" id="restartBtn">重新测试</button>
+  </section>
+
+  <section class="tips">
+    <div class="tip">
+      <h3>匹配逻辑</h3>
+      <p>每个选项会增加一组生活偏好标签，系统通过标签匹配度给城市打分。</p>
+    </div>
+    <div class="tip">
+      <h3>可自定义</h3>
+      <p>你可以在 <code>app.js</code> 中新增城市、问题与标签。</p>
+    </div>
+    <div class="tip">
+      <h3>适合展示</h3>
+      <p>页面支持移动端，适合做课程作业或展示作品。</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>Made for your next move.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
