@@ -15,11 +15,11 @@
     <div class="hero__content">
       <p class="kicker">CITY MATCH STUDIO</p>
       <h1>找到最适合你的城市</h1>
-      <p class="subtitle">通过一组选择题，快速匹配与你生活方式最合拍的城市。</p>
+      <p class="subtitle">用几分钟了解你的生活偏好，匹配最合拍的城市风格。</p>
       <div class="hero__badges">
-        <span>6 个问题</span>
-        <span>12 座候选城市</span>
-        <span>3 秒出结果</span>
+        <span id="questionCount">- 个问题</span>
+        <span id="cityCount">- 座候选城市</span>
+        <span>快速出结果</span>
       </div>
     </div>
     <div class="hero__card">
@@ -38,28 +38,42 @@
 
   <section class="results" id="results" aria-live="polite">
     <h2>你的城市匹配结果</h2>
-    <p class="results__hint">根据你的选择匹配度排序。</p>
+    <p class="results__hint">基于你的选择生成用户画像，并匹配城市画像。</p>
+    <div class="result-highlight" id="resultHighlight">
+      <div class="highlight-info">
+        <p class="highlight-tag">最佳匹配</p>
+        <h3 id="topCityName">-</h3>
+        <p id="topCityDesc"></p>
+        <div class="highlight-meta" id="topCityMeta"></div>
+      </div>
+      <div class="radar-card">
+        <canvas id="radarChart" width="320" height="320" aria-label="用户与城市雷达图"></canvas>
+        <div class="radar-legend">
+          <span class="legend-dot legend-city"></span>
+          <span>城市画像</span>
+          <span class="legend-dot legend-user"></span>
+          <span>你的偏好</span>
+        </div>
+        <p class="radar-note">选择其他匹配城市，可查看对应雷达图与解读。</p>
+      </div>
+    </div>
+    <div class="analysis-panel">
+      <div class="analysis-card">
+        <h4>你的个性画像</h4>
+        <p id="userAnalysis"></p>
+      </div>
+      <div class="analysis-card">
+        <h4>城市画像解读</h4>
+        <p id="cityAnalysis"></p>
+      </div>
+    </div>
+    <button class="btn outline" id="toggleMatchesBtn" type="button">查看其他匹配</button>
     <div class="result-grid" id="resultGrid"></div>
     <button class="btn outline" id="restartBtn">重新测试</button>
   </section>
 
-  <section class="tips">
-    <div class="tip">
-      <h3>匹配逻辑</h3>
-      <p>每个选项会增加一组生活偏好标签，系统通过标签匹配度给城市打分。</p>
-    </div>
-    <div class="tip">
-      <h3>可自定义</h3>
-      <p>你可以在 <code>app.js</code> 中新增城市、问题与标签。</p>
-    </div>
-    <div class="tip">
-      <h3>适合展示</h3>
-      <p>页面支持移动端，适合做课程作业或展示作品。</p>
-    </div>
-  </section>
-
   <footer class="footer">
-    <span>Made for your next move.</span>
+    <span>找到适合自己的下一站</span>
   </footer>
 
   <script src="app.js"></script>
