@@ -122,6 +122,12 @@ body {
   color: var(--muted);
 }
 
+.selection-hint {
+  margin: -0.75rem 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
 .question {
   font-size: 1.2rem;
   font-weight: 600;
@@ -178,6 +184,13 @@ body {
 .btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 20px rgba(18, 155, 124, 0.2);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+  box-shadow: none;
 }
 
 .btn.ghost {
@@ -260,6 +273,26 @@ body {
   margin: 0;
   color: var(--muted);
   line-height: 1.7;
+}
+
+.profile-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.profile-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 18px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 14px 32px rgba(31, 42, 46, 0.08);
+  border: 1px solid rgba(31, 42, 46, 0.08);
+}
+
+.profile-card h4 {
+  margin: 0 0 0.8rem;
+  font-size: 1.05rem;
+  color: var(--jade);
 }
 
 .highlight-tag {
@@ -382,12 +415,23 @@ body {
   gap: 0.5rem;
 }
 
+.tags--dense {
+  gap: 0.55rem;
+}
+
 .tags span {
   background: rgba(50, 182, 179, 0.12);
   color: var(--sea);
   padding: 0.2rem 0.5rem;
   border-radius: 999px;
   font-size: 0.75rem;
+}
+
+.match-reasons {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .footer {

@@ -1,0 +1,15 @@
+[Unit]
+Description=Choose Your City web app
+After=network.target
+
+[Service]
+Type=simple
+User=admin
+WorkingDirectory=/home/admin/projects/choose-your-city
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node /home/admin/projects/choose-your-city/server.js
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

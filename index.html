@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260316d" />
 </head>
 <body>
   <div class="bg-orbits" aria-hidden="true"></div>
@@ -24,10 +24,11 @@
     </div>
     <div class="hero__card">
       <div class="progress">
-        <div class="progress__bar" id="progressBar"></div>
+        <div class="progress__bar" id="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
       </div>
       <div class="step-indicator" id="stepIndicator">问题 1 / 6</div>
       <div class="question" id="question"></div>
+      <p class="selection-hint" id="selectionHint">请选择一个最符合你的选项。</p>
       <div class="options" id="options"></div>
       <div class="actions">
         <button class="btn ghost" id="prevBtn" disabled>上一步</button>
@@ -67,6 +68,16 @@
         <p id="cityAnalysis"></p>
       </div>
     </div>
+    <div class="profile-panel">
+      <div class="profile-card">
+        <h4>你的偏好关键词</h4>
+        <div class="tags tags--dense" id="userKeywordTags"></div>
+      </div>
+      <div class="profile-card">
+        <h4>本次匹配理由</h4>
+        <ul class="match-reasons" id="matchReasons"></ul>
+      </div>
+    </div>
     <button class="btn outline" id="toggleMatchesBtn" type="button">查看其他匹配</button>
     <div class="result-grid" id="resultGrid"></div>
     <button class="btn outline" id="restartBtn">重新测试</button>
@@ -76,6 +87,6 @@
     <span>找到适合自己的下一站</span>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=20260316d"></script>
 </body>
 </html>

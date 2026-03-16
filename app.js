@@ -1,4 +1,4 @@
-﻿const dimensions = [
+const dimensions = [
   { key: "pace", label: "节奏" },
   { key: "climate", label: "气候" },
   { key: "culture", label: "文化" },
@@ -6,6 +6,60 @@
   { key: "cost", label: "成本" },
   { key: "nature", label: "自然" }
 ];
+
+const tagLabels = {
+  ancient: "古城底蕴",
+  art: "艺术氛围",
+  balanced: "平衡感",
+  beach: "海滩生活",
+  beer: "休闲社交",
+  breeze: "通风舒适",
+  budget: "低生活压力",
+  business: "职业机会",
+  clear: "空气清透",
+  coastal: "滨海气质",
+  cold: "偏冷气候",
+  college: "年轻学术感",
+  culture: "文化体验",
+  dry: "干爽天气",
+  fast: "高效节奏",
+  flex: "弹性生活",
+  food: "美食密度",
+  garden: "园林审美",
+  history: "历史感",
+  humid: "湿润体感",
+  ice: "冬季特色",
+  inland: "稳定日常",
+  innovative: "创新氛围",
+  island: "度假感",
+  lake: "湖景生活",
+  metro: "城市便利度",
+  mild: "温和气候",
+  modern: "现代都市感",
+  mountain: "山景户外",
+  museum: "展馆资源",
+  nature: "自然亲近感",
+  nightlife: "夜生活",
+  premium: "资源密度",
+  quality: "生活品质",
+  quiet: "安静独处",
+  relax: "松弛感",
+  river: "江河景观",
+  scenic: "风景值",
+  sea: "海边生活",
+  seasonal: "四季分明",
+  shopping: "商业配套",
+  slow: "慢生活",
+  space: "空间感",
+  sunny: "日照充足",
+  tea: "休闲社交",
+  tech: "科技产业",
+  tropical: "热带氛围",
+  walk: "步行友好",
+  warm: "温暖体感",
+  water: "临水氛围",
+  winter: "冬日体验"
+};
 
 const questions = [
   {
@@ -78,6 +132,78 @@ const questions = [
       { label: "中等支出，性价比", tags: ["balanced", "food", "walk"] },
       { label: "低压生活，轻消费", tags: ["slow", "relax", "budget"] },
       { label: "追求空间感与生活品质", tags: ["space", "nature", "quality"] }
+    ]
+  },
+  {
+    text: "如果选一个理想晨间场景，你更偏向？",
+    options: [
+      { label: "地铁穿梭，快速进入状态", tags: ["metro", "fast", "business"] },
+      { label: "阳光洒进房间，慢慢吃早饭", tags: ["slow", "relax", "sunny"] },
+      { label: "沿河沿海散步，城市慢慢醒来", tags: ["walk", "coastal", "breeze"] },
+      { label: "楼下就是咖啡馆和展览空间", tags: ["art", "culture", "modern"] }
+    ]
+  },
+  {
+    text: "你更喜欢什么样的城市景观？",
+    options: [
+      { label: "高楼天际线，现代感拉满", tags: ["modern", "metro", "fast"] },
+      { label: "古建街区，越逛越有味道", tags: ["history", "culture", "ancient"] },
+      { label: "山海湖河，随手就是风景", tags: ["nature", "scenic", "mountain"] },
+      { label: "街巷烟火，日常感最动人", tags: ["food", "relax", "balanced"] }
+    ]
+  },
+  {
+    text: "理想中的夜晚氛围更像哪一种？",
+    options: [
+      { label: "灯火通明，活动不断", tags: ["nightlife", "modern", "fast"] },
+      { label: "好友小聚，边吃边聊", tags: ["food", "relax", "tea"] },
+      { label: "安静散步，早点回家", tags: ["quiet", "walk", "slow"] },
+      { label: "演出展览，文化活动丰富", tags: ["culture", "art", "museum"] }
+    ]
+  },
+  {
+    text: "对于城市规模，你更在意哪种体验？",
+    options: [
+      { label: "超大城市，机会密度第一", tags: ["metro", "business", "premium"] },
+      { label: "大而不挤，功能齐全就好", tags: ["balanced", "modern", "walk"] },
+      { label: "小而美，舒服比热闹重要", tags: ["slow", "relax", "quality"] },
+      { label: "靠自然吃饭，城市只是背景", tags: ["nature", "mountain", "scenic"] }
+    ]
+  },
+  {
+    text: "面对吃这件事，你属于哪一派？",
+    options: [
+      { label: "餐厅选择越多越幸福", tags: ["food", "metro", "modern"] },
+      { label: "爱本地老店和街边小馆", tags: ["food", "history", "culture"] },
+      { label: "吃得健康清爽更重要", tags: ["mild", "nature", "quality"] },
+      { label: "有特色夜宵才算完整", tags: ["food", "nightlife", "relax"] }
+    ]
+  },
+  {
+    text: "你对工作机会和成长空间的态度是？",
+    options: [
+      { label: "想要更卷一点，但机会要多", tags: ["fast", "business", "tech"] },
+      { label: "稳定上升，别太消耗自己", tags: ["balanced", "business", "inland"] },
+      { label: "工作只是生活的一部分", tags: ["slow", "relax", "space"] },
+      { label: "希望创意和表达空间更大", tags: ["art", "culture", "modern"] }
+    ]
+  },
+  {
+    text: "你更容易被哪类城市气质吸引？",
+    options: [
+      { label: "先锋感，大家都往前冲", tags: ["modern", "tech", "innovative"] },
+      { label: "文脉感，越住越有故事", tags: ["history", "culture", "museum"] },
+      { label: "度假感，像天天在放松", tags: ["island", "beach", "relax"] },
+      { label: "宜居感，过日子特别顺", tags: ["balanced", "walk", "quality"] }
+    ]
+  },
+  {
+    text: "如果长期定居，你最不能妥协的是？",
+    options: [
+      { label: "通勤和办事效率", tags: ["fast", "metro", "shopping"] },
+      { label: "自然环境和呼吸感", tags: ["nature", "breeze", "scenic"] },
+      { label: "文化内容和精神食粮", tags: ["culture", "art", "history"] },
+      { label: "生活成本别太紧绷", tags: ["budget", "balanced", "slow"] }
     ]
   }
 ];
@@ -228,10 +354,11 @@ const radarChart = document.getElementById("radarChart");
 const toggleMatchesBtn = document.getElementById("toggleMatchesBtn");
 const questionCount = document.getElementById("questionCount");
 const cityCount = document.getElementById("cityCount");
+const selectionHint = document.getElementById("selectionHint");
+const userKeywordTags = document.getElementById("userKeywordTags");
+const matchReasons = document.getElementById("matchReasons");
 
 const totalSteps = questions.length;
-let currentResults = [];
-let activeIndex = 0;
 let analysisRequestId = 0;
 const analysisCache = new Map();
 
@@ -244,64 +371,13 @@ const updateCounts = () => {
   }
 };
 
-const renderQuestion = () => {
-  const question = questions[state.step];
-  questionEl.textContent = question.text;
-  stepIndicator.textContent = `问题 ${state.step + 1} / ${totalSteps}`;
-  progressBar.style.width = `${((state.step + 1) / totalSteps) * 100}%`;
-
-  optionsEl.innerHTML = "";
-  question.options.forEach((option, index) => {
-    const label = document.createElement("label");
-    label.className = "option";
-    const input = document.createElement("input");
-    input.type = "radio";
-    input.name = `question-${state.step}`;
-    input.value = index;
-    if (state.answers.get(state.step) === index) {
-      input.checked = true;
-      label.classList.add("option--active");
-    }
-
-    input.addEventListener("change", () => {
-      state.answers.set(state.step, index);
-      document.querySelectorAll(".option").forEach((optionEl) => {
-        optionEl.classList.remove("option--active");
-      });
-      label.classList.add("option--active");
-    });
-
-    const text = document.createElement("span");
-    text.textContent = option.label;
-
-    label.appendChild(input);
-    label.appendChild(text);
-    optionsEl.appendChild(label);
-  });
-
-  prevBtn.disabled = state.step === 0;
-  nextBtn.textContent = state.step === totalSteps - 1 ? "查看结果" : "下一步";
-};
-
-const computeResults = () => {
+const getSelectedTags = () => {
   const selectedTags = [];
   state.answers.forEach((optionIndex, questionIndex) => {
     const option = questions[questionIndex].options[optionIndex];
     selectedTags.push(...option.tags);
   });
-
-  const scores = cities.map((city) => {
-    const matched = city.tags.filter((tag) => selectedTags.includes(tag));
-    return {
-      city,
-      score: matched.length,
-      matched
-    };
-  });
-
-  return scores
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 3);
+  return selectedTags;
 };
 
 const buildUserProfile = () => {
@@ -356,6 +432,7 @@ const buildUserProfile = () => {
       if (!delta) {
         return;
       }
+
       Object.entries(delta).forEach(([key, value]) => {
         profile[key] += value;
       });
@@ -379,6 +456,149 @@ const buildMetaTags = (profile) => {
   const strengths = sorted.slice(0, 2).map((item) => `${item.label}强`);
   const weaknesses = sorted.slice(-2).map((item) => `${item.label}弱`);
   return [...strengths, ...weaknesses];
+};
+
+const getTopTagLabels = (tags, limit = 6) => {
+  const frequency = tags.reduce((acc, tag) => {
+    acc[tag] = (acc[tag] || 0) + 1;
+    return acc;
+  }, {});
+
+  return Object.entries(frequency)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, limit)
+    .map(([tag]) => tagLabels[tag] || tag);
+};
+
+const calculateProfileSimilarity = (userProfile, cityProfile) => {
+  const totalDifference = dimensions.reduce((sum, dimension) => {
+    return sum + Math.abs(userProfile[dimension.key] - cityProfile[dimension.key]);
+  }, 0);
+  const maxDifference = dimensions.length * 9;
+  return 1 - totalDifference / maxDifference;
+};
+
+const calculateTagMatchRate = (selectedTags, cityTags) => {
+  if (!selectedTags.length) {
+    return 0;
+  }
+
+  const tagFrequency = selectedTags.reduce((acc, tag) => {
+    acc[tag] = (acc[tag] || 0) + 1;
+    return acc;
+  }, {});
+
+  const weightedMatches = cityTags.reduce((sum, tag) => sum + (tagFrequency[tag] || 0), 0);
+  return Math.min(1, weightedMatches / selectedTags.length);
+};
+
+const buildMatchReasons = (userProfile, city, matchedTags, profileSimilarity) => {
+  const topUserNeeds = buildMetaTags(userProfile).slice(0, 2).join("、");
+  const topCityStrengths = buildMetaTags(city.profile).slice(0, 2).join("、");
+  const tradeoffDimension = buildMetaTags(city.profile).slice(2).join("、");
+  const keywordLabels = getTopTagLabels(matchedTags, 3);
+
+  return [
+    keywordLabels.length
+      ? `你的选择和 ${city.name} 重合最多的是 ${keywordLabels.join("、")}。`
+      : `${city.name} 的标签重合不算多，但画像维度比较贴近。`,
+    `画像相似度约 ${Math.round(profileSimilarity * 100)}%，你在意的 ${topUserNeeds}，它在 ${topCityStrengths} 上也给得出来。`,
+    `需要权衡的是 ${tradeoffDimension}，更适合接受“优点明显、短板可管理”的城市选择。`
+  ];
+};
+
+const computeResults = () => {
+  const selectedTags = getSelectedTags();
+  const tagFrequency = selectedTags.reduce((acc, tag) => {
+    acc[tag] = (acc[tag] || 0) + 1;
+    return acc;
+  }, {});
+  const userProfile = buildUserProfile();
+
+  return cities
+    .map((city) => {
+      const matched = city.tags.filter((tag) => tagFrequency[tag]);
+      const tagMatchRate = calculateTagMatchRate(selectedTags, city.tags);
+      const profileSimilarity = calculateProfileSimilarity(userProfile, city.profile);
+      const matchRate = Math.round(tagMatchRate * 45 + profileSimilarity * 55);
+
+      return {
+        city,
+        score: matchRate,
+        matchRate,
+        tagMatchRate,
+        matched,
+        profileSimilarity,
+        reasons: buildMatchReasons(userProfile, city, matched, profileSimilarity)
+      };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
+};
+
+const setSelectionHint = () => {
+  if (!selectionHint) {
+    return;
+  }
+
+  selectionHint.textContent = state.answers.has(state.step)
+    ? "已记录本题选择，可以继续下一题。"
+    : "请选择一个最符合你的选项。";
+};
+
+const selectOption = (questionIndex, optionIndex, label) => {
+  state.answers.set(questionIndex, optionIndex);
+  document.querySelectorAll(".option").forEach((optionEl) => {
+    optionEl.classList.remove("option--active");
+  });
+  label.classList.add("option--active");
+  setSelectionHint();
+};
+
+const renderQuestion = () => {
+  const question = questions[state.step];
+  const progress = Math.round(((state.step + 1) / totalSteps) * 100);
+
+  questionEl.textContent = question.text;
+  stepIndicator.textContent = `问题 ${state.step + 1} / ${totalSteps}`;
+  progressBar.style.width = `${progress}%`;
+  progressBar.setAttribute("aria-valuenow", String(progress));
+
+  optionsEl.innerHTML = "";
+  question.options.forEach((option, index) => {
+    const label = document.createElement("label");
+    label.className = "option";
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = `question-${state.step}`;
+    input.value = index;
+
+    if (state.answers.get(state.step) === index) {
+      input.checked = true;
+      label.classList.add("option--active");
+    }
+
+    const activateOption = () => {
+      input.checked = true;
+      selectOption(state.step, index, label);
+    };
+
+    input.addEventListener("change", activateOption);
+    label.addEventListener("click", () => {
+      activateOption();
+    });
+
+    const text = document.createElement("span");
+    text.textContent = option.label;
+
+    label.appendChild(input);
+    label.appendChild(text);
+    optionsEl.appendChild(label);
+  });
+
+  prevBtn.disabled = state.step === 0;
+  nextBtn.textContent = state.step === totalSteps - 1 ? "查看结果" : "下一步";
+  setSelectionHint();
 };
 
 const renderRadar = (cityProfile, userProfile) => {
@@ -484,8 +704,44 @@ const setAnalysisText = (userText, cityText) => {
   }
 };
 
+const renderUserKeywords = (tags) => {
+  if (!userKeywordTags) {
+    return;
+  }
+
+  userKeywordTags.innerHTML = "";
+  tags.forEach((label) => {
+    const span = document.createElement("span");
+    span.textContent = label;
+    userKeywordTags.appendChild(span);
+  });
+};
+
+const renderMatchReasons = (reasons) => {
+  if (!matchReasons) {
+    return;
+  }
+
+  matchReasons.innerHTML = "";
+  reasons.forEach((reason) => {
+    const item = document.createElement("li");
+    item.textContent = reason;
+    matchReasons.appendChild(item);
+  });
+};
+
 const fetchAnalysis = async (userProfile, city, signal) => {
-  const response = await fetch("/api/analyze", {
+  const selectedTags = getSelectedTags();
+  const userKeywords = getTopTagLabels(selectedTags, 6);
+  const matchReasons = buildMatchReasons(
+    userProfile,
+    city,
+    city.tags.filter((tag) => selectedTags.includes(tag)),
+    calculateProfileSimilarity(userProfile, city.profile)
+  );
+  const apiUrl = new URL("./api/analyze", window.location.href);
+
+  const response = await fetch(apiUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     signal,
@@ -493,7 +749,9 @@ const fetchAnalysis = async (userProfile, city, signal) => {
       userProfile,
       cityProfile: city.profile,
       cityName: city.name,
-      cityDesc: city.desc
+      cityDesc: city.desc,
+      userKeywords,
+      matchReasons
     })
   });
 
@@ -504,52 +762,98 @@ const fetchAnalysis = async (userProfile, city, signal) => {
   return response.json();
 };
 
+const fetchAnalysisWithRetry = async (userProfile, city) => {
+  let lastError;
+
+  for (let attempt = 1; attempt <= 2; attempt += 1) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 20000);
+
+    try {
+      const result = await fetchAnalysis(userProfile, city, controller.signal);
+      clearTimeout(timeoutId);
+      return result;
+    } catch (error) {
+      clearTimeout(timeoutId);
+      lastError = error;
+      if (attempt === 2) {
+        throw error;
+      }
+      await new Promise((resolve) => setTimeout(resolve, 1200));
+    }
+  }
+
+  throw lastError;
+};
+
 const updateAnalysis = async (match, userProfile) => {
   const cacheKey = match.city.name;
   const cached = analysisCache.get(cacheKey);
   const requestId = ++analysisRequestId;
 
   setAnalysisText("正在生成你的个性解读...", "正在生成城市画像解读...");
+  renderUserKeywords(["正在生成偏好关键词..."]);
+  renderMatchReasons(["正在生成匹配理由...", "请稍候，AI 正在整理你的偏好。", "马上就好。"]);
 
   if (cached) {
     setAnalysisText(cached.userAnalysis, cached.cityAnalysis);
+    renderUserKeywords(cached.userKeywords);
+    renderMatchReasons(cached.matchReasons);
     return;
   }
 
   const fallback = buildAnalysisText(userProfile, match.city.profile);
-
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 8000);
+  const fallbackKeywords = getTopTagLabels(getSelectedTags(), 6);
+  const fallbackReasons = match.reasons;
 
   try {
-    const result = await fetchAnalysis(userProfile, match.city, controller.signal);
+    const result = await fetchAnalysisWithRetry(userProfile, match.city);
     if (requestId !== analysisRequestId) {
       return;
     }
+
     const userText = result.userAnalysis || fallback.user;
     const cityText = result.cityAnalysis || fallback.city;
-    analysisCache.set(cacheKey, { userAnalysis: userText, cityAnalysis: cityText });
+    const keywords = Array.isArray(result.userKeywords) && result.userKeywords.length
+      ? result.userKeywords
+      : fallbackKeywords;
+    const reasons = Array.isArray(result.matchReasons) && result.matchReasons.length
+      ? result.matchReasons
+      : fallbackReasons;
+
+    analysisCache.set(cacheKey, {
+      userAnalysis: userText,
+      cityAnalysis: cityText,
+      userKeywords: keywords,
+      matchReasons: reasons
+    });
     setAnalysisText(userText, cityText);
+    renderUserKeywords(keywords);
+    renderMatchReasons(reasons);
   } catch (error) {
     if (requestId !== analysisRequestId) {
       return;
     }
+
     setAnalysisText(
       `${fallback.user}（当前为本地模板）`,
       `${fallback.city}（当前为本地模板）`
     );
-  } finally {
-    clearTimeout(timeoutId);
+    renderUserKeywords(fallbackKeywords);
+    renderMatchReasons(fallbackReasons);
   }
 };
 
 const renderTopMatch = (match, userProfile) => {
   topCityName.textContent = match.city.name;
-  topCityDesc.textContent = match.city.desc;
+  topCityDesc.textContent = `${match.city.desc} 综合匹配度 ${match.matchRate}% ，由标签契合 ${Math.round(match.tagMatchRate * 100)}% 和画像相似 ${Math.round(match.profileSimilarity * 100)}% 共同组成。`;
 
   topCityMeta.innerHTML = "";
-  const metaTags = buildMetaTags(match.city.profile);
-  metaTags.forEach((tag) => {
+  [
+    ...buildMetaTags(match.city.profile),
+    `标签契合 ${Math.round(match.tagMatchRate * 100)}%`,
+    `画像相似 ${Math.round(match.profileSimilarity * 100)}%`
+  ].forEach((tag) => {
     const span = document.createElement("span");
     span.textContent = tag;
     topCityMeta.appendChild(span);
@@ -564,15 +868,17 @@ const renderOtherMatches = (matches, userProfile) => {
   matches.slice(1).forEach((result, index) => {
     const card = document.createElement("div");
     card.className = "result-card";
+
     const title = document.createElement("h3");
     title.textContent = `${index + 2}. ${result.city.name}`;
+
     const score = document.createElement("div");
     score.className = "result-score";
-    score.textContent = `匹配度 ${result.score}`;
+    score.textContent = `综合 ${result.matchRate}% · 画像 ${Math.round(result.profileSimilarity * 100)}%`;
 
     const tags = document.createElement("div");
     tags.className = "tags";
-    result.matched.slice(0, 6).forEach((tag) => {
+    getTopTagLabels(result.matched, 4).forEach((tag) => {
       const span = document.createElement("span");
       span.textContent = tag;
       tags.appendChild(span);
@@ -583,41 +889,32 @@ const renderOtherMatches = (matches, userProfile) => {
     card.appendChild(tags);
 
     card.addEventListener("click", () => {
-      activeIndex = index + 1;
-      renderTopMatch(matches[activeIndex], userProfile);
+      renderTopMatch(result, userProfile);
       document.querySelectorAll(".result-card").forEach((item) => {
         item.classList.remove("active");
       });
       card.classList.add("active");
     });
 
-    if (index === activeIndex - 1) {
-      card.classList.add("active");
-    }
-
     resultGrid.appendChild(card);
   });
 };
 
 const renderResults = () => {
-  const topMatches = computeResults();
+  const selectedTags = getSelectedTags();
   const userProfile = buildUserProfile();
-  currentResults = topMatches;
-  activeIndex = 0;
+  const topMatches = computeResults();
 
   if (topMatches[0]) {
     renderTopMatch(topMatches[0], userProfile);
   }
 
+  renderUserKeywords(getTopTagLabels(selectedTags, 6));
   renderOtherMatches(topMatches, userProfile);
 
   resultsSection.classList.add("active");
-  if (resultGrid) {
-    resultGrid.classList.add("is-hidden");
-  }
-  if (toggleMatchesBtn) {
-    toggleMatchesBtn.textContent = "查看其他匹配";
-  }
+  resultGrid.classList.add("is-hidden");
+  toggleMatchesBtn.textContent = "查看其他匹配";
   resultsSection.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
@@ -653,24 +950,16 @@ prevBtn.addEventListener("click", () => {
 restartBtn.addEventListener("click", () => {
   state.step = 0;
   state.answers.clear();
+  analysisRequestId += 1;
   resultsSection.classList.remove("active");
   renderQuestion();
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-if (toggleMatchesBtn) {
-  toggleMatchesBtn.addEventListener("click", () => {
-    const hidden = resultGrid.classList.toggle("is-hidden");
-    toggleMatchesBtn.textContent = hidden ? "查看其他匹配" : "收起其他匹配";
-    if (!hidden && resultGrid.children.length > 0) {
-      const activeCard = resultGrid.querySelector(".result-card.active");
-      if (!activeCard) {
-        const firstCard = resultGrid.children[0];
-        firstCard.classList.add("active");
-      }
-    }
-  });
-}
+toggleMatchesBtn.addEventListener("click", () => {
+  const hidden = resultGrid.classList.toggle("is-hidden");
+  toggleMatchesBtn.textContent = hidden ? "查看其他匹配" : "收起其他匹配";
+});
 
 updateCounts();
 renderQuestion();
