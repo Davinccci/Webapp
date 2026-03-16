@@ -16,7 +16,7 @@
 
 body {
   margin: 0;
-  font-family: "Source Han Serif SC", "Noto Serif SC", serif;
+  font-family: "Noto Serif SC", "Source Han Serif SC", serif;
   color: var(--ink);
   background: radial-gradient(circle at top, #fff9ef 0%, #fbe3c8 40%, #f3f2ee 80%);
   min-height: 100vh;
@@ -44,10 +44,11 @@ body {
 }
 
 .hero__content h1 {
-  font-family: "ZCOOL QingKe HuangYou", cursive;
+  font-family: "Noto Sans SC", sans-serif;
   font-size: clamp(2.6rem, 4vw, 4rem);
-  letter-spacing: 2px;
+  letter-spacing: 0;
   margin: 0 0 1rem;
+  font-weight: 700;
 }
 
 .kicker {
